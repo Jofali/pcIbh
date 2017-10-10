@@ -19,11 +19,11 @@ var articleList = {
   template: '#articleList',
   // template: '<ul class="article-list">\
   //             <li v-for="art in Article">\
-  //               <router-link :to="\'/\' + art.id">\
+  //               <router-link :to="\'/\' + art.AId">\
   //                 <div class="article-img">\
   //                   <img src="images/art.svg" >\
   //                 </div>\
-  //                 <div class="article-title">{{ art.title }}</div>\
+  //                 <div class="article-title">{{ art.Title }}</div>\
   //               </router-link>\
   //             </li>\
   //           </ul>',
@@ -38,9 +38,9 @@ var articleList = {
   created: function () {
     var self = this
     // ajax请求数据并赋值给组件
-    axios.get('http://www.lgwow.com/api/Article/ArticleList')
+    axios.get('http://www.lgwow.com/api/Article/ArticleList?AtId=0')
     .then(function (response) {
-      self.Article = response.data.data
+      self.Article = response.data
     })
     .catch(function (response) {
       console.log(response);
@@ -57,9 +57,9 @@ var article = {
   },
   created: function () {
     var self = this
-    axios.get('https://cnodejs.org/api/v1/topic/'+ self.$route.params.id)
+    axios.get('http://www.lgwow.com/api/Article/ArticleInfo?AId='+ self.$route.params.id)
     .then(function (response) {
-      self.content = response.data.data.content
+      self.content = response.data.Content
     })
     .catch(function (response) {
       console.log(response);

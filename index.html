@@ -26,11 +26,11 @@
   <script type="text/x-template" id="articleList">
     <ul class="article-list">
       <li v-for="art in Article">
-        <router-link :to="'/' + art.id">
+        <router-link :to="'/' + art.AId">
           <div class="article-img">
             <img src="images/art.svg" >
           </div>
-          <div class="article-title">{{ art.title }}</div>
+          <div class="article-title">{{ art.Title }}</div>
         </router-link>
       </li>
     </ul>
