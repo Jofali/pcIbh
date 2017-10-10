@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>小黑屋</title>
+  <link rel="stylesheet" href="css/build.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/axios@0.16.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ibh-nav></ibh-nav>
+    <router-view></router-view>
+    <ibh-footer></ibh-footer>
+  </div>
+  <script type="text/x-template" id="articleList">
+    <ul class="article-list">
+      <li v-for="art in Article">
+        <router-link :to="'/' + art.id">
+          <div class="article-img">
+            <img src="images/art.svg" >
+          </div>
+          <div class="article-title">{{ art.title }}</div>
+        </router-link>
+      </li>
+    </ul>
+  </script>
+  <!-- build -->
+  <script src="js/components.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/build.js"></script>
+</body>
+
+</html>
