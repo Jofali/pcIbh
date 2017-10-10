@@ -17,6 +17,16 @@ var footer = {
 // 文章列表
 var articleList = {
   template: '#articleList',
+  // template: '<ul class="article-list">\
+  //             <li v-for="art in Article">\
+  //               <router-link :to="\'/\' + art.id">\
+  //                 <div class="article-img">\
+  //                   <img src="images/art.svg" >\
+  //                 </div>\
+  //                 <div class="article-title">{{ art.title }}</div>\
+  //               </router-link>\
+  //             </li>\
+  //           </ul>',
   data: function () {
     return {
       Article: [
@@ -28,7 +38,7 @@ var articleList = {
   created: function () {
     var self = this
     // ajax请求数据并赋值给组件
-    axios.get('https://cnodejs.org/api/v1/topics')
+    axios.get('http://www.lgwow.com/api/Article/ArticleList')
     .then(function (response) {
       self.Article = response.data.data
     })
