@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>小黑屋</title>
+  <title>Smart Black House_聪明只决定你走的有多快，不决定你走的有多远</title>
   <link rel="stylesheet" href="css/build.css">
   <!--
   <script src="js/config/vue.js"></script>
@@ -22,18 +22,25 @@
     <ibh-nav></ibh-nav>
     <router-view></router-view>
     <ibh-footer></ibh-footer>
-  </div>
+  </div> 
   <script type="text/x-template" id="articleList">
-    <ul class="article-list">
-      <li v-for="art in Article">
-        <router-link :to="'/' + art.AId">
-          <div class="article-img">
-            <img src="images/art.svg" >
-          </div>
-          <div class="article-title">{{ art.Title }}</div>
-        </router-link>
-      </li>
-    </ul>
+    <div class="article-list">
+      <div class="head">
+        <h3>不聪明</h3>
+        <p>聪明只决定你走的有多快，不决定你走的有多远</p>
+        <p>以大多数人的努力程度之低，根本轮不到拼天赋</p>
+      </div>
+      <ul>
+        <li v-for="art in Article">
+          <router-link :to="'/' + art.AId">
+            <div class="article-img">
+              <img src="images/art.svg" >
+            </div>
+            <div class="article-title">{{ art.Title }}</div>
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </script>
   <!-- build -->
   <script src="js/components.js"></script>

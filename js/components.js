@@ -5,7 +5,11 @@
 // 头部导航
 var nav = {
   template: '<div class="nav">\
-              <router-link to="/">文章列表</router-link>\
+              <div class="nav-list">\
+                <router-link to="/">Smart Black House</router-link>\
+              </div>\
+              <div class="nav-bg">\
+              </div>\
             </div>'
 }
 
@@ -49,7 +53,9 @@ var articleList = {
 }
 
 var article = {
-  template: '<div class="article" v-html="content"></div>',
+  template: '<div class="article-wrap" >\
+  <div class="article" v-html="content"></div>\
+  </div>',
   data: function () {
     return {
       content: '加载中...'
