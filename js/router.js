@@ -1,18 +1,16 @@
+var tem = require('./components.js')
 /**
  * 定义路由
  **/
-
 var routes = [
   {
     path: '/',
-    component: articleList
+    component: tem.articleList
   },
   {
     path: '/:id',
-    component: article
+    component: tem.article
   }
 ]
 
-var router = new VueRouter({
-  routes
-})
+module.exports = routes
